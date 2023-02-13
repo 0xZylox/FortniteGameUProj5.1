@@ -65,6 +65,9 @@ public:
 
 	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 		EFortCustomGender Gender;
+
+	UPROPERTY(EditAnywhere)
+		TSoftObjectPtr<UAnimMontage> EmoteMontage;
 };
 
 UCLASS(BlueprintType)
@@ -126,6 +129,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		FGameplayTagContainer TagsWhichIndicateEmoteParent;
+
+	UPROPERTY(EditAnywhere)
+	FText CustomBuiltInExclusiveCallout;
 
 	virtual FPrimaryAssetId GetPrimaryAssetId() const override
 	{

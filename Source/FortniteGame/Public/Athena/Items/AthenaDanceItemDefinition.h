@@ -26,6 +26,10 @@ class FORTNITEGAME_API UAthenaDanceItemDefinition : public UFortMontageItemDefin
 	GENERATED_BODY()
 		
 public:
+
+	UPROPERTY(EditAnywhere)
+		bool bUsesSecondaryFireInput;
+
 	UPROPERTY(EditAnywhere)
 		bool bMovingEmote;
 
@@ -44,11 +48,17 @@ public:
 	UPROPERTY(EditAnywhere)
 		bool bUseHighPreviewCamera;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere) 
 		bool bGroupAnimationSync;
 
 	UPROPERTY(EditAnywhere)
+		bool bAllowLowerBodyLocomotion;
+
+	UPROPERTY(EditAnywhere)
 		float WalkForwardSpeed;
+
+	UPROPERTY(EditAnywhere)
+		float GroupSyncAnimOffset;
 
 	UPROPERTY(EditAnywhere)
 		UAthenaDanceItemDefinition* GroupEmoteToStartLeader;
@@ -72,6 +82,9 @@ public:
 		float GroupEmotePositionOffsetTolerance;
 
 	UPROPERTY(EditAnywhere)
+		float GroupEmoteFollowDistance;
+
+	UPROPERTY(EditAnywhere)
 		bool bLockGroupEmoteLeaderRotation;
 
 	UPROPERTY(EditAnywhere)
@@ -85,6 +98,12 @@ public:
 
 	UPROPERTY(EditAnywhere, meta = (AssetBundles = "AvatarDisplay"))
 		TSoftObjectPtr<UAnimMontage> FrontEndAnimationFemaleOverride;
+
+	UPROPERTY(EditAnywhere)
+	TArray<FFortEmoteMapping> FrontEndAnimationOverrides;
+
+	UPROPERTY(EditAnywhere)
+		bool bUseMetaTagsFromPickaxeActor;
 
 	UPROPERTY(EditAnywhere)
 		FSoftClassPath CustomDanceAbility;

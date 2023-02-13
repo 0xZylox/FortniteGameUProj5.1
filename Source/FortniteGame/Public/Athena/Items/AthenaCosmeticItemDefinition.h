@@ -10,9 +10,28 @@
 #include "AthenaCosmeticItemDefinition.generated.h"
 
 class UAthenaCharacterItemDefinition;
+class UFortMontageItemDefinitionBase;
 
 USTRUCT(BlueprintType)
 struct FFortStatManagerTag : public FGameplayTag
+{
+	GENERATED_BODY()
+
+public:
+
+};
+
+UCLASS(DefaultToInstanced, EditInlineNew)
+class UFortCosmeticItemAdditionalData : public UObject
+{
+	GENERATED_BODY()
+
+public:
+
+};
+
+UCLASS(DefaultToInstanced, EditInlineNew)
+class UFortVariantPreviewGenerator : public UObject
 {
 	GENERATED_BODY()
 
@@ -78,6 +97,7 @@ public:
 	TArray<FFortCosmeticAdaptiveStatPair> StatValues; 
 };
 
+
 UCLASS(BlueprintType)
 class FORTNITEGAME_API UAthenaCosmeticItemDefinition : public UFortAccountItemDefinition
 {
@@ -104,10 +124,16 @@ public:
 		bool bDynamicInstallBundlesError;
 
 	UPROPERTY(EditAnywhere)
+		bool bDynamicInstallBundlesCancelled;
+
+	UPROPERTY(EditAnywhere)
 		bool bDynamicInstallBundlesComplete;
 
 	UPROPERTY(EditAnywhere)
 		double DynamicInstallBundlesUpdateStartTime;
+
+	UPROPERTY(EditAnywhere)		
+		double DynamicInstallBundlesUpdateTotalTime;
 
 	UPROPERTY(EditAnywhere)
 	 int DynamicInstallBundleRequestRefCount;
@@ -133,26 +159,35 @@ public:
 	UPROPERTY(EditAnywhere)
 		TArray<FGameplayTag> VariantChannelsToNeverSendToMCP;
 
-	//UPROPERTY(EditAnywhere)
-	//TMap<FCosmeticVariantInfo, FSoftClassPath> ReactivePreviewDrivers;
-
 	UPROPERTY(EditAnywhere)
 		TArray<FAthenaCosmeticMaterialOverride> MaterialOverrides;
 
 	UPROPERTY(EditAnywhere)
 		FGameplayTagContainer ObservedPlayerStats;
 
-//	UPROPERTY(EditAnywhere) forward declaration doesn't seem to work for this??
-	//	TArray<UFortMontageItemDefinitionBase*> BuiltInEmotes;
+	UPROPERTY(EditAnywhere)
+		TArray<UFortMontageItemDefinitionBase*> BuiltInEmotes;
 
 	UPROPERTY(EditAnywhere, Instanced)
 		TArray<UFortCosmeticVariant*> ItemVariants;
+
+	UPROPERTY(EditAnywhere, Instanced)
+	TArray<UFortCosmeticItemAdditionalData*> AdditionalDataFields;
 
 	UPROPERTY(EditAnywhere)
 		FGameplayTag VariantChannelToUseForThumbnails;
 
 	UPROPERTY(EditAnywhere)
+	bool bOverrideDefaultVariantPreviewTime;
+
+	UPROPERTY(EditAnywhere)
+	float  DefaultVariantPreviewOverrideTime;
+
+	UPROPERTY(EditAnywhere)
 		TArray<FortCosmeticVariantPreview> ItemVariantPreviews;
+
+	UPROPERTY(EditAnywhere, Instanced)
+	UFortVariantPreviewGenerator* ItemVariantPreviewGenerator;
 
 	UPROPERTY(EditAnywhere)
 		FText DirectAquisitionStyleDisclaimerOverride;
@@ -162,6 +197,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		FText UnlockRequirements;
+
+	UPROPERTY(EditAnywhere)
+		FText ItemVariantUnlockRequirements;
 
 	UPROPERTY(EditAnywhere)
 		TSoftObjectPtr<UFortAccountItemDefinition> UnlockingItemDef;
@@ -198,4 +236,16 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		TSoftObjectPtr<UTexture2D> ExclusiveIcon;
+
+	UPROPERTY(EditAnywhere)
+	int BaseShotGridId;
+
+	UPROPERTY(EditAnywhere)
+	TArray<int> VariantShotGridIds;   
+
+	UPROPERTY(EditAnywhere)
+	TArray<int> ShotGridIds;   
+
+	UPROPERTY(EditAnywhere)
+	TArray<FText> ItemSearchTags;
 };

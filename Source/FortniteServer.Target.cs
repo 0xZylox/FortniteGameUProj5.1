@@ -9,6 +9,6 @@ public class FortniteServerTarget : TargetRules
 	{
 		Type = TargetType.Server;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
-		ExtraModuleNames.AddRange( new string[] { "FortniteGame" } );
+		ExtraModuleNames.AddRange( new string[] { "FortniteGame", "FortniteVersion" } );
     }
 }
