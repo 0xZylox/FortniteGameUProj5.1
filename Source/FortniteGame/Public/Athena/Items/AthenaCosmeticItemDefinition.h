@@ -136,10 +136,10 @@ public:
 		double DynamicInstallBundlesUpdateTotalTime;
 
 	UPROPERTY(EditAnywhere)
-	 int DynamicInstallBundleRequestRefCount;
+	 int32 DynamicInstallBundleRequestRefCount;
 
 	UPROPERTY(EditAnywhere)
-	 int DynamicInstallBundleRequestRetryCount;
+	 int32 DynamicInstallBundleRequestRetryCount;
 
 	UPROPERTY(EditAnywhere)
 	    EVariantUnlockType VariantUnlockType;
@@ -148,7 +148,7 @@ public:
 		FRotator PreviewPawnRotationOffset;
 
 	UPROPERTY(EditAnywhere)
-		TArray<UObject*> FoleyLibraries;
+		TArray<UObject*> CosmeticSoundLibraries;
 
 	UPROPERTY(EditAnywhere)
 		FGameplayTagContainer DisallowedCosmeticTags;
@@ -158,6 +158,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		TArray<FGameplayTag> VariantChannelsToNeverSendToMCP;
+
+	//UPROPERTY(EditAnywhere)
+	//TMap<struct FCosmeticVariantInfo, UObject*> ReactivePreviewDrivers;
 
 	UPROPERTY(EditAnywhere)
 		TArray<FAthenaCosmeticMaterialOverride> MaterialOverrides;
@@ -205,7 +208,7 @@ public:
 		TSoftObjectPtr<UFortAccountItemDefinition> UnlockingItemDef;
 
 	UPROPERTY(EditAnywhere)
-		FSoftClassPath ItemPreviewActorClass;
+		TSoftClassPtr<UObject> ItemPreviewActorClass;
 
 	UPROPERTY(EditAnywhere)
 	TSoftObjectPtr<UFXSystemAsset> ItemPreviewParticleSystem;
@@ -238,13 +241,13 @@ public:
 		TSoftObjectPtr<UTexture2D> ExclusiveIcon;
 
 	UPROPERTY(EditAnywhere)
-	int BaseShotGridId;
+	int32 BaseShotGridId;
 
 	UPROPERTY(EditAnywhere)
-	TArray<int> VariantShotGridIds;   
+	TArray<int32> VariantShotGridIds;   
 
 	UPROPERTY(EditAnywhere)
-	TArray<int> ShotGridIds;   
+	TArray<int32> ShotGridIds;   
 
 	UPROPERTY(EditAnywhere)
 	TArray<FText> ItemSearchTags;

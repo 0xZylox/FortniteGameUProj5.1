@@ -7,6 +7,7 @@
 #include "GameplayTags.h"
 #include "FortniteGame/FortniteGame.h"
 #include "Items/FortItemAccessTokenType.h"
+#include "Customization/FortCosmeticVariant.h"
 #include "FortMontageItemDefinitionBase.generated.h"
 
 /**
@@ -86,7 +87,7 @@ public:
 		TArray<FFortEmoteMapping> AnimationOverrides;
 
 	UPROPERTY(EditAnywhere)
-		int PreviewLoops;
+		int32 PreviewLoops;
 
 	UPROPERTY(EditAnywhere)
 		float PreviewLength;
@@ -126,6 +127,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		TSoftObjectPtr<UAthenaCosmeticItemDefinition> RequiredEmoteParent;
+
+	UPROPERTY(EditAnywhere)
+		TArray<FMcpVariantChannelInfo> EmoteParentVariants;
 
 	UPROPERTY(EditAnywhere)
 		FGameplayTagContainer TagsWhichIndicateEmoteParent;

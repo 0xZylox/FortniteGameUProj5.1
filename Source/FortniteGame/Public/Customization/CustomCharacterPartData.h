@@ -174,13 +174,13 @@ public:
 
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-		class UClass* AnimClass;
+		TSoftClassPtr<UObject> AnimClass;
 
 	UPROPERTY(EditAnywhere)
-		class UClass* FrontEndAnimClass;
+		TSoftClassPtr<UObject> FrontEndAnimClass;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-		class UClass* MannequinAnimClass;
+		TSoftClassPtr<UObject> MannequinAnimClass;
 
 	UPROPERTY(EditAnywhere)
 		TSoftObjectPtr<UCustomAccessoryColorSwatch> AccessoryColors;

@@ -36,10 +36,10 @@ public:
 		FDataTableRowHandle UpgradeRarityRecipeHandle;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-		int MinLevel;
+		int32 MinLevel;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-		int MaxLevel;
+		int32 MaxLevel;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		FString GrantToProfileType;

@@ -19,7 +19,7 @@ void UFortItemDefinitionThumbnailRenderer::GetThumbnailSize(UObject* Object, flo
 
 	if (Item)
 	{
-		if (UTexture2D* Texture = Item->LargePreviewImage)
+		if (TSoftObjectPtr<UTexture2D> Texture = Item->LargePreviewImage)
 		{
 			OutWidth = FMath::TruncToInt(Zoom * (float)Texture->GetSurfaceWidth());
 			OutHeight = FMath::TruncToInt(Zoom * (float)Texture->GetSurfaceHeight());
@@ -34,7 +34,7 @@ void UFortItemDefinitionThumbnailRenderer::Draw(UObject* Object, int32 X, int32 
 	UFortItemDefinition* Item = Cast<UFortItemDefinition>(Object);
 	if (Item)
 	{
-		if (UTexture2D* Texture2D = Item->LargePreviewImage)
+		if (TSoftObjectPtr<UTexture2D> Texture2D = Item->LargePreviewImage)
 		{
 			const bool bUseTranslucentBlend = Texture2D && Texture2D->HasAlphaChannel() && ((Texture2D->LODGroup == TEXTUREGROUP_UI) || (Texture2D->LODGroup == TEXTUREGROUP_Pixels2D));
 			TRefCountPtr<FBatchedElementParameters> BatchedElementParameters;

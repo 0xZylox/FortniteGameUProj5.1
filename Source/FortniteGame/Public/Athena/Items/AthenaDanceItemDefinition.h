@@ -61,16 +61,16 @@ public:
 		float GroupSyncAnimOffset;
 
 	UPROPERTY(EditAnywhere)
-		UAthenaDanceItemDefinition* GroupEmoteToStartLeader;
+		TSoftObjectPtr<UAthenaDanceItemDefinition> GroupEmoteToStartLeader;
 
 	UPROPERTY(EditAnywhere)
-		UAthenaDanceItemDefinition* GroupEmoteToStartFollower;
+		TSoftObjectPtr<UAthenaDanceItemDefinition> GroupEmoteToStartFollower;
 
 	UPROPERTY(EditAnywhere)
-		UAthenaDanceItemDefinition* GroupEmoteToStartLeaderIfBothOwn;
+		TSoftObjectPtr<UAthenaDanceItemDefinition> GroupEmoteToStartLeaderIfBothOwn;
 
 	UPROPERTY(EditAnywhere)
-		UAthenaDanceItemDefinition* GroupEmoteToStartFollowerIfBothOwn;
+		TSoftObjectPtr<UAthenaDanceItemDefinition> GroupEmoteToStartFollowerIfBothOwn;
 
 	UPROPERTY(EditAnywhere)
 		TArray<FVariantSwapMontageData> MotageSelectionGroups;
@@ -106,7 +106,7 @@ public:
 		bool bUseMetaTagsFromPickaxeActor;
 
 	UPROPERTY(EditAnywhere)
-		FSoftClassPath CustomDanceAbility;
+		TSoftClassPtr<UObject> CustomDanceAbility;
 
 	UPROPERTY(EditAnywhere)
 		FText ChatTriggerCommandName;

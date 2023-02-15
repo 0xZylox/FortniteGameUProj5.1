@@ -22,6 +22,13 @@ enum class EAthenaChallengeTabVisibility : uint8
 	Hide = 0,
 	ShowAlways = 1
 };
+UENUM(BlueprintType)
+enum class ECharacterPartAttachmentTargetType : uint8
+{
+	RootComponent = 0,
+	SkeletalMeshForAssociatedPlayerPawnPartType = 1,
+	ECharacterPartAttachmentTargetType_MAX = 2
+};
 
 
 UENUM(BlueprintType)
@@ -638,7 +645,7 @@ enum class EAthenaWinCondition : uint8
 	EAthenaWinCondition_MAX = 7
 };
 
-UENUM()
+UENUM(BlueprintType)
 enum class EFortCustomPartType : uint8
 {
 	Head = 0,

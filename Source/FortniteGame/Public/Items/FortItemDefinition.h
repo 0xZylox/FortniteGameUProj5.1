@@ -77,6 +77,9 @@ public:
 
 //DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(OnItemCountChanged)
 
+
+//DECLARE_MULTICAST_DELEGATE_ThreeParams(OnItemCountChanged, int32, int32);
+
 UCLASS()
 class FORTNITEGAME_API UFortItemDefinition : public UMcpItemDefinitionBase
 {
@@ -87,8 +90,6 @@ class FORTNITEGAME_API UFortItemDefinition : public UMcpItemDefinitionBase
 
 public:
 
-	//UDELEGATE(BlueprintAuthorityOnly)
-		//DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(OnItemCountChanged, float, Damage, const UDamageType*, DamageType, AActor*, DamagedActor, AActor*, DamageCauser);
 
 	UPROPERTY(EditAnywhere, AssetRegistrySearchable)
 		EFortItemType ItemType;
@@ -190,7 +191,7 @@ public:
 		TSoftObjectPtr<UTexture2D> SmallPreviewImage;
 
 	UPROPERTY(EditAnywhere)
-		UTexture2D* LargePreviewImage;
+		TSoftObjectPtr<UTexture2D> LargePreviewImage;
 
 	UPROPERTY(EditAnywhere)
 		FSoftObjectPath DisplayAssetPath;
