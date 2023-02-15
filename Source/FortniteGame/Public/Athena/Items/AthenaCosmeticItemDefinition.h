@@ -159,8 +159,8 @@ public:
 	UPROPERTY(EditAnywhere)
 		TArray<FGameplayTag> VariantChannelsToNeverSendToMCP;
 
-	//UPROPERTY(EditAnywhere)
-	//TMap<struct FCosmeticVariantInfo, UObject*> ReactivePreviewDrivers;
+	UPROPERTY(EditAnywhere)
+		TSoftClassPtr<UObject> ReactivePreviewDrivers;
 
 	UPROPERTY(EditAnywhere)
 		TArray<FAthenaCosmeticMaterialOverride> MaterialOverrides;

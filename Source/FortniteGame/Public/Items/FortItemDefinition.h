@@ -90,6 +90,8 @@ class FORTNITEGAME_API UFortItemDefinition : public UMcpItemDefinitionBase
 
 public:
 
+	UPROPERTY(EditAnywhere)
+		TSoftClassPtr<UObject> OnItemCountChanged;
 
 	UPROPERTY(EditAnywhere, AssetRegistrySearchable)
 		EFortItemType ItemType;

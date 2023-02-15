@@ -135,7 +135,7 @@ public:
 		FGameplayTagContainer TagsWhichIndicateEmoteParent;
 
 	UPROPERTY(EditAnywhere)
-	FText CustomBuiltInExclusiveCallout;
+	    FText CustomBuiltInExclusiveCallout;
 
 	virtual FPrimaryAssetId GetPrimaryAssetId() const override
 	{
