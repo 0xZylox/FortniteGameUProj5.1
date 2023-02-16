@@ -7,6 +7,7 @@
 #include "FortniteGame/FortniteGame.h"
 #include "Engine/DataAsset.h"
 #include "Math/UnrealMathUtility.h"
+#include "Animation/FortMontageLookupTable.h"
 #include "CustomCharacterPartData.generated.h"
 
 
@@ -142,13 +143,13 @@ public:
 		bool bCollideWithOtherPartsCloth;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-		 UClass* AnimClass;
+		TSoftClassPtr<UObject> AnimClass;
 
 	UPROPERTY(EditAnywhere)
-		 UClass* FrontEndAnimClass;
+		TSoftClassPtr<UObject> FrontEndAnimClass;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-		 UClass* MannequinAnimClass;
+		TSoftClassPtr<UObject> MannequinAnimClass;
 
 	UPROPERTY(EditAnywhere)
 		TSoftObjectPtr<UCustomAccessoryColorSwatch> AccessoryColors;
@@ -217,6 +218,11 @@ class FORTNITEGAME_API UCustomCharacterHeadData : public UCustomCharacterBodyPar
 	GENERATED_BODY()
 
 public:
+	UPROPERTY(EditAnywhere)
+	TSoftObjectPtr< UFortMontageLookupTable> RootSkeletonDefaultMontageLookupTable; // 0xc8(0x28)
+
+	UPROPERTY(EditAnywhere)
+		TSoftObjectPtr<UFortMontageLookupTable> RootSkeletonOverrideMontageLookupTable;
 
 	UPROPERTY(EditAnywhere)
 		TSoftObjectPtr<UCustomSkinColorSwatch> SkinColorSwatch;
