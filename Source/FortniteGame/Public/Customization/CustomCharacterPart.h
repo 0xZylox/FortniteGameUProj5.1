@@ -84,85 +84,85 @@ struct FFortAnimInput_PlayerSkydiveAnimAsset
 
 public:
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Dive_BS_Female; // 0x00(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Dive_BS_Male; // 0x08(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Dive_ToGlide_BS_Female; // 0x10(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Dive_ToGlide_BS_Male; // 0x18(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Dive_Lean_Additive_BS_Female; // 0x20(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Dive_Lean_Additive_BS_Male; // 0x28(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UAnimSequence* Dive_Lean_Center_Pose; // 0x30(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Dive_Turn_Additive_BS_Female; // 0x38(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Dive_Turn_Additive_BS_Male; // 0x40(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Dive_DriftA_Additive_BS; // 0x48(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Dive_DriftB_Additive_BS; // 0x50(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Dive_DriftC_Additive_BS; // 0x58(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Dive_FidgetA_Additive_BS; // 0x60(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Dive_FidgetB_Additive_BS; // 0x68(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Dive_FidgetC_Additive_BS; // 0x70(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Glide_BS_Female; // 0x78(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Glide_BS_Male; // 0x80(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Glide_ToDive_BS_Female; // 0x88(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Glide_ToDive_BS_Male; // 0x90(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Glide_Lean_Additive_BS_Female; // 0x98(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Glide_Lean_Additive_BS_Male; // 0xa0(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Glide_Turn_Additive_BS_Female; // 0xa8(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UBlendSpace* Glide_Turn_Additive_BS_Male; // 0xb0(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UAnimSequence* Glide_DriftA_Additive; // 0xb8(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UAnimSequence* Glide_DriftB_Additive; // 0xc0(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UAnimSequence* Glide_DriftC_Additive; // 0xc8(0x08)
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, meta = (IgnoreForMemberInitializationTest))
 	 UAnimSequence* Glide_DriftZero_Additive; // 0xd0(0x08)
 };
 

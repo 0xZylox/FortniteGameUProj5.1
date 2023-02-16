@@ -6,11 +6,39 @@
 #include "Athena/Items/AthenaCosmeticItemDefinition.h"
 #include "FortniteGame/FortniteGame.h"
 #include "FortniteGame/Public/Heroes/FortHeroType.h"
+#include "Customization/CustomCharacterPart.h"
+#include "Weapons\Data\FortWeaponMeleeItemDefinition.h"
+#include "AthenaBackpackItemDefinition.h"
 #include "AthenaCharacterItemDefinition.generated.h"
 
 /**
  * 
  */
+UFortHeroType;
+
+UCLASS(BlueprintType)
+class UFortFeedbackBank : public UPrimaryDataAsset 
+{
+	GENERATED_BODY()
+
+public:
+	/* cba to do it since useless for now
+	UPROPERTY(EditAnywhere)
+	 TArray<FFortFeedbackActionBankDefined> BankDefinedFeedbackEvents; // 0x30(0x10)
+	 TArray<FFortFeedbackAction> FeedbackEvents; // 0x40(0x10)
+	 
+	UPROPERTY(EditAnywhere)*/
+};
+
+USTRUCT()
+struct FAthenaCharacterTaggedPartsList 
+{
+	GENERATED_BODY()
+
+public:
+	TArray<TSoftObjectPtr<UCustomCharacterPart>> Parts; // 0x00(0x10)
+};
+
 UCLASS(BlueprintType)
 class FORTNITEGAME_API UAthenaCharacterItemDefinition : public UAthenaCosmeticItemDefinition
 {
@@ -20,20 +48,32 @@ public:
 	UPROPERTY(EditAnywhere)
 		TMap<FName, UObject*> RequestedDataStores;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-		class UFortHeroType* HeroDefinition;
+	UPROPERTY(EditAnywhere)
+	TMap<TEnumAsByte<EFortCustomPartType>, UMarshalledVFX_AuthoredDataConfig*> AuthoredVFXData_ByPart;
 
-	//UPROPERTY(EditAnywhere)
-		//UAthenaBackpackItemDefinition* DefaultBackpack;
+	UPROPERTY(EditAnywhere)
+		TArray<TSoftObjectPtr<UCustomCharacterPart>>BaseCharacterParts;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+		 UFortHeroType* HeroDefinition;
+
+	UPROPERTY(EditAnywhere)
+		UAthenaBackpackItemDefinition* DefaultBackpack;
 
 	UPROPERTY(EditAnywhere)
 		TArray<UAthenaCosmeticItemDefinition*> RequiredCosmeticItems;
 
 	UPROPERTY(EditAnywhere)
-		EFortCustomGender Gender;
+	float                                              PreviewPawnScale;
 
 	UPROPERTY(EditAnywhere)
-		FSoftObjectPath FeedbackBank;
+		TEnumAsByte<EFortCustomGender> Gender;
+
+	UPROPERTY(EditAnywhere)
+		TSoftObjectPtr<UFortFeedbackBank> FeedbackBank;
+
+	UPROPERTY(EditAnywhere)
+	TMap<FGameplayTag, FAthenaCharacterTaggedPartsList> TaggedPartsOverride;
 
 	virtual FPrimaryAssetId GetPrimaryAssetId() const override
 	{
