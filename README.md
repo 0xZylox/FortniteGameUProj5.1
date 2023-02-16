@@ -32,7 +32,7 @@ To install the correct components for this Project , make sure the Game Developm
 -   **Windows 10 SDK (10.0.18362 or newer)
 -   **Unreal Engine Installer**
 
-Right click the *FortniteGame.uproject* and Switch Unreal Engine version... to the coressponding unreal version for this Project which can be found [here](https://www.google.com/search?q=soon)
+Right click the *FortniteGame.uproject* and Switch Unreal Engine version... to the coressponding unreal version for this Project which is 5.1.1 which can be found at the epic games launcher
 
 Right click the *FortniteGame.uproject* and Generate Visual Studio Project Files then open the *FortniteGame.sln* and build the Project with Visual Studio
 
