@@ -14,6 +14,7 @@
 #include "Customization/CustomCharacterPart.h"
 #include "BaseVariantDef.generated.h"
 
+class UAthenaCosmeticItemDefinition;
 /**
  * 
  */
@@ -422,4 +423,56 @@ public:
 	UPROPERTY(EditAnywhere)
 		FCosmeticMetaTagContainer MetaTags;
 
+};
+
+USTRUCT(BlueprintType)
+struct FEmoteMontageSwap
+{
+	GENERATED_BODY()
+
+public:
+
+	UPROPERTY(EditAnywhere)
+		TSoftObjectPtr<UAnimMontage> ToSwapFrom;
+
+	UPROPERTY(EditAnywhere)
+		TSoftObjectPtr<UAnimMontage> ToSwapTo;
+};
+
+USTRUCT(BlueprintType)
+struct FEmoteMontageVariantDef : public FBaseVariantDef 
+{
+	GENERATED_BODY()
+
+public:
+	UPROPERTY(EditAnywhere)
+	 TArray<FEmoteMontageSwap> MontageSwaps; 
+
+	UPROPERTY(EditAnywhere)
+	 FCosmeticMetaTagContainer MetaTags;
+};
+
+USTRUCT(BlueprintType)
+struct FLoadoutVariantDef : public FPartVariantDef
+{
+	GENERATED_BODY()
+
+public:
+	UPROPERTY(EditAnywhere)
+	TSoftObjectPtr<UAthenaCosmeticItemDefinition> LoadoutItem;
+
+	UPROPERTY(EditAnywhere)
+	ELoadoutVariantInsertType LocationToInsert;                                         
+
+	UPROPERTY(EditAnywhere)
+	bool bItemExpectedInLoadout = false;                                 
+
+	UPROPERTY(EditAnywhere)
+	bool bRequireItemToBeCurrent = false;
+
+	UPROPERTY(EditAnywhere)
+	bool bIgnoreRequireItemToBeCurrentInFrontEnd = false;
+
+	UPROPERTY(EditAnywhere)
+	TArray<FEmoteMontageVariantDef> VariantEmoteMontages;                                   
 };

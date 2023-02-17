@@ -88,7 +88,7 @@ class FORTNITEGAME_API UFortCosmeticVariantBackedByArray : public UFortCosmeticV
 };
 
 UCLASS(BlueprintType)
-class UFortCosmeticMaterialVariant : public UFortCosmeticVariantBackedByArray
+class FORTNITEGAME_API UFortCosmeticMaterialVariant : public UFortCosmeticVariantBackedByArray
 {
 	GENERATED_BODY()
 
@@ -98,11 +98,21 @@ public:
 };
 
 UCLASS(BlueprintType)
-class UFortCosmeticCharacterPartVariant : public UFortCosmeticVariantBackedByArray
+class FORTNITEGAME_API UFortCosmeticCharacterPartVariant : public UFortCosmeticVariantBackedByArray
 {
 	GENERATED_BODY()
 
 public:
 	UPROPERTY(EditAnywhere)
 		TArray<FPartVariantDef> PartOptions;
+};
+
+UCLASS(BlueprintType)
+class FORTNITEGAME_API UFortCosmeticProfileLoadoutVariant : public UFortCosmeticVariantBackedByArray
+{
+	GENERATED_BODY()
+
+public:
+	UPROPERTY(EditAnywhere)
+	TArray<FLoadoutVariantDef> LoadoutAugmentations;
 };

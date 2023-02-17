@@ -667,6 +667,14 @@ enum class EFortTemplateAccess : uint8
 };
 
 UENUM(BlueprintType)
+enum class ELoadoutVariantInsertType : uint8 
+{
+	StartOfArray,
+	EndOfArray,
+	ELoadoutVariantInsertType_MAX,
+};
+
+UENUM(BlueprintType)
 enum class EFortCustomGender : uint8
 {
 	Invalid = 0,
