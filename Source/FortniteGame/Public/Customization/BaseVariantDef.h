@@ -9,6 +9,8 @@
 #include "FortniteGame/FortniteGame.h"
 #include "Particles/ParticleSystem.h"
 #include "NiagaraSystem.h"
+#include "Items/FortAccountItemDefinition.h"
+#include "Engine/EngineTypes.h"
 #include "Customization/CustomCharacterPart.h"
 #include "BaseVariantDef.generated.h"
 
@@ -43,7 +45,7 @@ public:
 		FText UnlockRequirements;
 
 	UPROPERTY(EditAnywhere)
-		TSoftObjectPtr<UMcpItemDefinitionBase> UnlockingItemDef;
+		TSoftObjectPtr<UFortAccountItemDefinition> UnlockingItemDef;
 };
 
 USTRUCT(BlueprintType)
@@ -76,17 +78,6 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		TSoftObjectPtr<UMaterialInterface> OverrideMaterial;
-};
-
-USTRUCT(BlueprintType)
-struct FMaterialVariantDef : public FBaseVariantDef
-{
-	GENERATED_BODY()
-
-public:
-	UPROPERTY(EditAnywhere)
-		TArray<FMaterialVariants> VariantMaterials;
-
 };
 
 USTRUCT(BlueprintType)
@@ -157,6 +148,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	   TSoftObjectPtr<UFXSystemAsset> OverrideParticleSystem; 
+
+	UPROPERTY(EditAnywhere)
+	bool bResetParameterOverridesOnSwap = false;
 };
 
 USTRUCT(BlueprintType)
@@ -192,6 +186,9 @@ struct FParticleParamterVariant
 public:
 
 	UPROPERTY(EditAnywhere)
+	TSoftObjectPtr<UFXSystemAsset> ParticleSystemToAlter;
+
+	UPROPERTY(EditAnywhere)
 		TArray<FMaterialVectorVariant> ColorParams;
 
 	UPROPERTY(EditAnywhere)
@@ -218,39 +215,6 @@ public:
 	 TSoftObjectPtr<UParticleSystem> CascadeVersion; 
 };
 
-USTRUCT(BlueprintType)
-struct FManagedParticleSwapVariant
-{
-	GENERATED_BODY()
-
-public:
-	
-	UPROPERTY(EditAnywhere)
-	FGameplayTag  ParamGroupTag;
-	
-	UPROPERTY(EditAnywhere)
-		FFortPortableSoftParticles ParticleToOverride;
-};
-
-USTRUCT(BlueprintType)
-struct FManagedParticleParamVariant
-{
-	GENERATED_BODY()
-
-public:
-	
-	UPROPERTY(EditAnywhere)
-	FGameplayTag ParamGroupTag;
-
-	UPROPERTY(EditAnywhere)
-		TArray<FMaterialVectorVariant> ColorParams;
-
-	UPROPERTY(EditAnywhere)
-		TArray<FVectorParamVariant>  VectorParams;
-
-	UPROPERTY(EditAnywhere)
-		TArray<FMaterialFloatVariant> FloatParams;
-};
 
 USTRUCT(BlueprintType)
 struct FFoleySoundVariant
@@ -277,6 +241,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		FName  OverridSocketName;
+
+	UPROPERTY(EditAnywhere)
+	TSoftObjectPtr<USkeletalMesh> SourceObjectToModify;
 };
 
 USTRUCT(BlueprintType)
@@ -314,6 +281,104 @@ public:
 	UPROPERTY(EditAnywhere)
 	FCosmeticMetaTagContainer MetaTags;
 };
+USTRUCT(BlueprintType)
+struct FVariantParticleSystemInitializerData
+{
+	GENERATED_BODY()
+
+public:
+	UPROPERTY(EditAnywhere)
+	 FName ParticleComponentName;     
+
+	UPROPERTY(EditAnywhere)
+		TSoftObjectPtr<UFXSystemAsset> ParticleSystem;
+
+	UPROPERTY(EditAnywhere)
+		TSoftObjectPtr<USkeletalMesh> MeshToBindTO;
+
+	UPROPERTY(EditAnywhere)
+	 FName  AttachSocketName;                                         
+
+	UPROPERTY(EditAnywhere)
+	EAttachmentRule LocationRule;                                            
+
+	UPROPERTY(EditAnywhere)
+	EAttachmentRule RotationRule;                                            
+
+	UPROPERTY(EditAnywhere)
+	EAttachmentRule ScaleRule;                                             
+
+	UPROPERTY(EditAnywhere)
+	bool bWeldSimulatedBodies = false;                                   
+
+};
+
+USTRUCT(BlueprintType)
+struct FMeshVariant 
+{
+	GENERATED_BODY()
+
+public:
+
+	UPROPERTY(EditAnywhere)
+	 TSoftObjectPtr<USkeletalMesh> MeshToSwap; // 0x00(0x28)
+
+	UPROPERTY(EditAnywhere)
+	 FName ComponentToOverride; // 0x28(0x08)
+
+	UPROPERTY(EditAnywhere)
+	 TSoftObjectPtr<USkeletalMesh> OverrideMesh; // 0x30(0x28)
+
+	UPROPERTY(EditAnywhere)
+	EAnimInstanceClassSwapType                         AnimInstanceClassSwapType;
+
+	UPROPERTY(EditAnywhere)
+		TSoftClassPtr<UObject> AnimInstanceClassToSwap;
+
+		UPROPERTY(EditAnywhere)
+		TSoftClassPtr<UObject> OverrideAnimInstanceClass;
+};
+
+USTRUCT(BlueprintType)
+struct FSoundVariant
+{
+	GENERATED_BODY()
+
+public:
+
+	UPROPERTY(EditAnywhere)
+		TSoftObjectPtr<USoundBase> SoundToSwap;
+
+	UPROPERTY(EditAnywhere)
+		FName ComponentToOverride;
+
+	UPROPERTY(EditAnywhere)
+		TSoftObjectPtr<USoundBase> OverrideSound;
+
+};
+
+USTRUCT(BlueprintType)
+struct FMaterialVariantDef : public FBaseVariantDef
+{
+	GENERATED_BODY()
+
+public:
+	UPROPERTY(EditAnywhere)
+		TArray<FMaterialVariants> VariantMaterials;
+
+	UPROPERTY(EditAnywhere)
+		TArray<FMaterialParamterDef>                VariantMaterialParams;
+
+	UPROPERTY(EditAnywhere)
+		TArray<FSoundVariant>                       VariantSounds;                                            // 0x00B0(0x0010) (Edit, ZeroConstructor)
+
+	UPROPERTY(EditAnywhere)
+		TArray<FFoleySoundVariant>                  VariantFoley;                                             // 0x00C0(0x0010) (Edit, ZeroConstructor)
+
+	UPROPERTY(EditAnywhere)
+		FCosmeticMetaTagContainer                   MetaTags;
+
+};
 
 USTRUCT(BlueprintType)
 struct FPartVariantDef : public FBaseVariantDef
@@ -329,10 +394,10 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		TArray<FMaterialParamterDef> VariantMaterialParams;
-	/*
+	
 	UPROPERTY(EditAnywhere)
 	TArray<FVariantParticleSystemInitializerData> InitalParticelSystemData;
-	*/
+	
 	UPROPERTY(EditAnywhere)
 		TArray<FParticleVariant> VariantParticles;
 
@@ -340,10 +405,7 @@ public:
 		TArray<FParticleParamterVariant> VariantParticleParams;
 
 	UPROPERTY(EditAnywhere)
-		TArray<FManagedParticleSwapVariant> VariantSwapInParticles;
-
-	UPROPERTY(EditAnywhere)
-		TArray<FManagedParticleParamVariant> VariantAlteredParticleParams;
+		TArray<FSoundVariant> VariantSounds;
 
 	UPROPERTY(EditAnywhere)
 		TArray<FFoleySoundVariant> VariantFoley;
@@ -353,6 +415,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		TArray<FScriptedActionVariant> VariantActions;
+
+	UPROPERTY(EditAnywhere)
+		TArray<FMeshVariant> VariantMeshes;
 
 	UPROPERTY(EditAnywhere)
 		FCosmeticMetaTagContainer MetaTags;

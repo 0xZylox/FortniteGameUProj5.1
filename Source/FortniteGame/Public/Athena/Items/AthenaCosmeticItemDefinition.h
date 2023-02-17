@@ -187,7 +187,7 @@ public:
 	float  DefaultVariantPreviewOverrideTime;
 
 	UPROPERTY(EditAnywhere)
-		TArray<FortCosmeticVariantPreview> ItemVariantPreviews;
+		TArray<FFortCosmeticVariantPreview> ItemVariantPreviews;
 
 	UPROPERTY(EditAnywhere, Instanced)
 	UFortVariantPreviewGenerator* ItemVariantPreviewGenerator;

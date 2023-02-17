@@ -43,7 +43,7 @@ public:
 };
 
 USTRUCT(BlueprintType)
-struct FortCosmeticVariantPreview
+struct FFortCosmeticVariantPreview
 {
 	GENERATED_USTRUCT_BODY()
 
@@ -67,6 +67,10 @@ class FORTNITEGAME_API UFortCosmeticVariant : public UObject
 	GENERATED_BODY()
 
 public:
+
+	UPROPERTY(EditAnywhere)
+		TSoftObjectPtr<UMaterialInterface> CustomPreviewTileMaterial;
+
 	UPROPERTY(EditAnywhere)
 		FGameplayTag VariantChannelTag;
 

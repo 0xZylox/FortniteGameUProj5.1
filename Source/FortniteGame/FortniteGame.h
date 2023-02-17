@@ -675,6 +675,13 @@ enum class EFortCustomGender : uint8
 	Both = 3,
 	EFortCustomGender_MAX = 4
 };
+UENUM(BlueprintType)
+enum class EAnimInstanceClassSwapType : uint8
+{
+	None = 0,
+	SwapOnMatch = 1,
+	EAnimInstanceClassSwapType_MAX = 2
+};
 
 UENUM()
 enum class EFortAlteration : uint8
