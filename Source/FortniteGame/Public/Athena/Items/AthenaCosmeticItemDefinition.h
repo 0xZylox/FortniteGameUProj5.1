@@ -30,15 +30,6 @@ public:
 
 };
 
-UCLASS(DefaultToInstanced, EditInlineNew)
-class UFortVariantPreviewGenerator : public UObject
-{
-	GENERATED_BODY()
-
-public:
-
-};
-
 USTRUCT(BlueprintType)
 struct FAthenaCosmeticMaterialOverride
 {
@@ -95,6 +86,15 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	TArray<FFortCosmeticAdaptiveStatPair> StatValues; 
+};
+
+UCLASS(DefaultToInstanced, EditInlineNew)
+class UFortVariantPreviewGenerator : public UObject
+{
+	GENERATED_BODY()
+
+public:
+
 };
 
 

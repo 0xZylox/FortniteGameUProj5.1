@@ -46,6 +46,10 @@
 			]
 		},
 		{
+			"Name": "SoundCueTemplates",
+			"Enabled": true
+		},
+		{
 			"Name": "FortSoundCueTemplates",
 			"Enabled": false
 		}

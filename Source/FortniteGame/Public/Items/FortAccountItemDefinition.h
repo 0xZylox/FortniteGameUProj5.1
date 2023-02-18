@@ -44,3 +44,12 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		FString GrantToProfileType;
 };
+
+UCLASS(BlueprintType)
+class FORTNITEGAME_API UFortChallengeBundleItemDefinition : public UFortAccountItemDefinition
+{
+	GENERATED_BODY()
+
+public:
+	// To do 
+};

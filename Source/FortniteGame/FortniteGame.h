@@ -675,6 +675,39 @@ enum class ELoadoutVariantInsertType : uint8
 };
 
 UENUM(BlueprintType)
+enum class EItemWrapMaterialType : uint8
+{
+	WeaponWrap = 0,
+	VehicleWrap_Opaque = 1,
+	VehicleWrap_Masked = 2,
+	Character = 3,
+	EItemWrapMaterialType_MAX = 4
+};
+UENUM(BlueprintType)
+enum class ECosmeticMetaTagRequirementCategory : uint8
+{
+	None = 0,
+	Glider = 1,
+	Pickaxe = 2,
+	Backpack = 3,
+	Character = 4,
+	FullLoadout = 5,
+	MAX = 6
+};
+
+UENUM(BlueprintType)
+enum class EFortRichColorConflictResolutionRules : uint8
+{
+	NoConflictsAllowed = 0,
+	BlackOrWhiteCannotConflict = 1,
+	MinimumDistanceBlackOrWhite = 2,
+	MinimumContrast = 3,
+	MinimumContrastOrHueSaturationShift = 4,
+	MinimumContrastGrayscale = 5,
+	EFortRichColorConflictResolutionRules_MAX = 6
+};
+
+UENUM(BlueprintType)
 enum class EFortCustomGender : uint8
 {
 	Invalid = 0,
