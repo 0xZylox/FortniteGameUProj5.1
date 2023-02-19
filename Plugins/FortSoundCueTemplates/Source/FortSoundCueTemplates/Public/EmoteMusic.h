@@ -8,12 +8,11 @@
 #include "EmoteBase.h"
 #include "EmoteMusic.generated.h"
 
-UCLASS(hidecategories = object, BlueprintType)
+UCLASS(BlueprintType)
 class FORTSOUNDCUETEMPLATES_API UEmoteMusic : public UEmoteBase
 {
 	GENERATED_UCLASS_BODY()
 
 public:
-
 	virtual void OnRebuildGraph(USoundCue& SoundCue) const override;
 };

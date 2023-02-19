@@ -5,16 +5,15 @@
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
 #include "SoundCueTemplate.h"
-#include "GliderOpenClose.h"
+#include "FortSoundCueTemplateBase.h"
 #include "GliderClose.generated.h"
 
-UCLASS(hidecategories = object, BlueprintType)
-class FORTSOUNDCUETEMPLATES_API UGliderClose : public UGliderOpenClose
+UCLASS(BlueprintType)
+class FORTSOUNDCUETEMPLATES_API UGliderClose : public UFortSoundCueTemplateSimple
 {
 	GENERATED_UCLASS_BODY()
 
 public:
-
 	virtual void OnRebuildGraph(USoundCue& SoundCue) const override;
 };
 

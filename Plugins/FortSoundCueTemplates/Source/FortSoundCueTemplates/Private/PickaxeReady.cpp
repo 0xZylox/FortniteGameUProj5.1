@@ -1,5 +1,4 @@
 #include "PickaxeReady.h"
-#include "Sound/SoundCue.h"
 #include "FortSoundCueTemplateBase.h"
 
 UPickaxeReady::UPickaxeReady(const FObjectInitializer& ObjectInitializer)
@@ -7,8 +6,10 @@ UPickaxeReady::UPickaxeReady(const FObjectInitializer& ObjectInitializer)
 {
 }
 
+
 void UPickaxeReady::OnRebuildGraph(USoundCue& SoundCue) const
 {
 }
+
 
 

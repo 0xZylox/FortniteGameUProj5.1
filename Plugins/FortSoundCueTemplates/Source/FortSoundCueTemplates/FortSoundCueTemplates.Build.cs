@@ -26,7 +26,9 @@ public class FortSoundCueTemplates : ModuleRules
 			new string[]
 			{
 				"Core",
-				"SoundCueTemplates"
+				"Engine",
+				"SoundCueTemplates",
+				"DeveloperSettings"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);

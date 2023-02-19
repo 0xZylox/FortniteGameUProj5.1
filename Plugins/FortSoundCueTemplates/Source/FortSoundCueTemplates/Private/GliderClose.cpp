@@ -11,4 +11,3 @@ void UGliderClose::OnRebuildGraph(USoundCue& SoundCue) const
 {
 }
 
-

@@ -7,8 +7,7 @@ UGliderThrustStart::UGliderThrustStart(const FObjectInitializer& ObjectInitializ
 {
 }
 
+
 void UGliderThrustStart::OnRebuildGraph(USoundCue& SoundCue) const
 {
 }
-
-

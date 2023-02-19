@@ -8,12 +8,12 @@
 #include "FortSoundCueTemplateBase.h"
 #include "PickaxeReady.generated.h"
 
-UCLASS(hidecategories = object, BlueprintType)
-class FORTSOUNDCUETEMPLATES_API UPickaxeReady : public UFortSoundCueTemplateBase
+UCLASS(BlueprintType)
+class FORTSOUNDCUETEMPLATES_API UPickaxeReady : public UPickaxeBase
 {
 	GENERATED_UCLASS_BODY()
 
 public:
-
 	virtual void OnRebuildGraph(USoundCue& SoundCue) const override;
+
 };

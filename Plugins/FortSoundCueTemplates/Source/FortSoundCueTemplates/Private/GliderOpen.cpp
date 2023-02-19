@@ -6,7 +6,6 @@ UGliderOpen::UGliderOpen(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
 }
-
 void UGliderOpen::OnRebuildGraph(USoundCue& SoundCue) const
 {
 }

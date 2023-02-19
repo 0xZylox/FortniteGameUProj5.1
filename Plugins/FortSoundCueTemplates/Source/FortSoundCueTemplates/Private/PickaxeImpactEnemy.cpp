@@ -7,8 +7,9 @@ UPickaxeImpactEnemy::UPickaxeImpactEnemy(const FObjectInitializer& ObjectInitial
 {
 }
 
+
+
 void UPickaxeImpactEnemy::OnRebuildGraph(USoundCue& SoundCue) const
 {
 }
-
 
