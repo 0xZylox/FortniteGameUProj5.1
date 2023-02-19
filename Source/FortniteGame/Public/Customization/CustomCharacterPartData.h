@@ -157,7 +157,7 @@ public:
 };
 
 UCLASS(BlueprintType)
-class FORTNITEGAME_API UCustomCharacterBackpackData : public UCustomCharacterPartData
+class FORTNITEGAME_API UCustomCharacterBackpackData : public UCustomCharacterAccessoryData
 {
 	GENERATED_BODY()
 
