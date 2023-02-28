@@ -116,6 +116,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		bool bHideIfNotOwned;
+		
+	UPROPERTY(EditAnywhere)
+	    FString DynamicInstallBundleName;
 
 	UPROPERTY(EditAnywhere)
 		bool bInitializedConfiguredDynamicInstallBundles;
