@@ -1,6 +1,6 @@
 # FortniteGame-Modding-5.1 (23.40)
 
-> This is a Unreal Engine Project to mod 23.40 Fortnite
+> This is a Unreal Engine Project to mod 23.50 Fortnite
 > Note that this is a wip and many classes crash the game as of now
 ---
 
