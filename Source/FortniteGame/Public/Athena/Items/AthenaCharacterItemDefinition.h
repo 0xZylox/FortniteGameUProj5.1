@@ -32,6 +32,7 @@ class FORTNITEGAME_API UAthenaCharacterItemDefinition : public UAthenaCosmeticIt
 	GENERATED_BODY()
 
 public:
+
 	UPROPERTY(EditAnywhere)
 		TMap<FName, UObject*> RequestedDataStores;
 
