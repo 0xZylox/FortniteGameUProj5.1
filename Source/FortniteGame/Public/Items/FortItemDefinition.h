@@ -75,11 +75,6 @@ public:
 	TArray<FFortTooltipDisplayStatsCategory> TooltipCategories; 
 };
 
-//DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(OnItemCountChanged)
-
-
-//DECLARE_MULTICAST_DELEGATE_ThreeParams(OnItemCountChanged, int32, int32);
-
 UCLASS()
 class FORTNITEGAME_API UFortItemDefinition : public UMcpItemDefinitionBase
 {

@@ -13,5 +13,5 @@ UCLASS()
 class FORTNITEGAME_API UFortGameplayAbility : public UGameplayAbility
 {
 	GENERATED_BODY()
-	
+	// to do
 };

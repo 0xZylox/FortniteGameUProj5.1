@@ -11,6 +11,22 @@
 /**
  * 
  */
+
+UCLASS(BlueprintType)
+class FORTNITEGAME_API UFortItemIconDefinition : public UPrimaryDataAsset
+{
+	GENERATED_BODY()
+	
+public:
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	 TSoftObjectPtr<UTexture2D> SmallImage; 
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	 TSoftObjectPtr<UTexture2D> LargeImage; 
+	
+};
+
 UCLASS(BlueprintType)
 class FORTNITEGAME_API UFortWorkerType : public UFortCharacterType
 {
@@ -18,13 +34,13 @@ class FORTNITEGAME_API UFortWorkerType : public UFortCharacterType
 	
 public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	EFortCustomGender Gender; 
-
-	//UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	//TSoftObjectPtr<UFortItemIconDefinition> FixedPortrait;
-
+	TEnumAsByte<EFortCustomGender> Gender;
+	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	bool bIsManager;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	TSoftObjectPtr<UFortItemIconDefinition> FixedPortrait;
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	FGameplayTagContainer ManagerSynergyTag;

@@ -16,19 +16,6 @@
  */
 UFortHeroType;
 
-UCLASS(BlueprintType)
-class UFortFeedbackBank : public UPrimaryDataAsset 
-{
-	GENERATED_BODY()
-
-public:
-	/* cba to do it since useless for now
-	UPROPERTY(EditAnywhere)
-	 TArray<FFortFeedbackActionBankDefined> BankDefinedFeedbackEvents; // 0x30(0x10)
-	 TArray<FFortFeedbackAction> FeedbackEvents; // 0x40(0x10)
-	 
-	UPROPERTY(EditAnywhere)*/
-};
 
 USTRUCT()
 struct FAthenaCharacterTaggedPartsList 

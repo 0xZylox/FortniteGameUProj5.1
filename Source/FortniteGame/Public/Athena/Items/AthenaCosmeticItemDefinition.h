@@ -97,6 +97,53 @@ public:
 
 };
 
+UCLASS(BlueprintType)
+class UFortVariantTokenType : public UFortAccountItemDefinition
+{
+	GENERATED_BODY()
+
+public:
+
+	UPROPERTY(EditAnywhere)
+		EItemProfileType                                   ProfileType;                                              // 0x0420(0x0001) (Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData)
+
+	UPROPERTY(EditAnywhere)
+		UFortItemDefinition* cosmetic_item;                                            // 0x0428(0x0008) (Edit, ZeroConstructor)
+
+	UPROPERTY(EditAnywhere)
+		FGameplayTag                                VariantChannelTag;                                        // 0x0430(0x0004) (Edit)
+
+	UPROPERTY(EditAnywhere)
+		FGameplayTag                                VariantNameTag;                                           // 0x0434(0x0004) (Edit)
+
+	UPROPERTY(EditAnywhere)
+		TArray<FCosmeticVariantInfo>                AdditionalVariantsToGrant;                                // 0x0438(0x0010) (Edit, ZeroConstructor)
+
+	UPROPERTY(EditAnywhere)
+		TArray<FCosmeticVariantInfo>                VariantPreviewOverrides;                                  // 0x0448(0x0010) (Edit, ZeroConstructor)
+
+	UPROPERTY(EditAnywhere)
+		bool                                               bAutoEquipVariant = true;                                        // 0x0458(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+
+	UPROPERTY(EditAnywhere)
+		EFortVariantTokenEquipRule                         VariantEquipRules;                                        // 0x0459(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+
+	UPROPERTY(EditAnywhere)
+		bool                                               bMarkItemUnseen;                                          // 0x045A(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+
+	UPROPERTY(EditAnywhere)
+		bool                                               bCreateGiftbox;                                           // 0x045B(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+
+	UPROPERTY(EditAnywhere)
+		bool                                               bGrantBaseItem;                                           // 0x045C(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+
+	UPROPERTY(EditAnywhere)
+		FString                                     CustomGiftbox;                                            // 0x0460(0x0010) (Edit, ZeroConstructor)
+
+	UPROPERTY(EditAnywhere)
+		bool                                               bUseDisplayNameInGiftbox;                                 // 0x0470(0x0001) (Edit, ZeroConstructor, IsPlainOldData)
+};
+
 
 UCLASS(BlueprintType)
 class FORTNITEGAME_API UAthenaCosmeticItemDefinition : public UFortAccountItemDefinition
@@ -116,9 +163,9 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		bool bHideIfNotOwned;
-		
+
 	UPROPERTY(EditAnywhere)
-	    FString DynamicInstallBundleName;
+	FString DynamicInstallBundleName;
 
 	UPROPERTY(EditAnywhere)
 		bool bInitializedConfiguredDynamicInstallBundles;

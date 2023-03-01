@@ -30,6 +30,40 @@ enum class ECharacterPartAttachmentTargetType : uint8
 	ECharacterPartAttachmentTargetType_MAX = 2
 };
 
+UENUM(BlueprintType)
+enum class EFortFeedbackContext : uint8
+{
+	FFC_Instigator,
+	FFC_Recipient,
+	FFC_TeamWitness,
+	FFC_EnemyWitness,
+	FFC_AllPawns,
+	FFC_Announcer,
+	FFC_None_Max,
+	FFC_MAX,
+};
+
+UENUM(BlueprintType)
+enum class EFortFeedbackAddressee : uint8
+{
+	FFA_Instigator                 = 0,
+	FFA_Recipient                  = 1,
+	FFA_All                        = 2,
+	FFA_MAX                        = 3
+};
+
+UENUM(BlueprintType)
+enum class EFortFeedbackBroadcastFilter : uint8
+{
+	FFBF_Speaker                   = 0,
+	FFBF_SpeakerTeam               = 1,
+	FFBF_SpeakerAdressee           = 2,
+	FFBF_HumanPvP_Team1            = 3,
+	FFBF_HumanPvP_Team2            = 4,
+	FFBF_None_Max                  = 5,
+	FFBF_MAX                       = 6
+};
+
 
 UENUM(BlueprintType)
 enum class EAthenaSeasonShopVisibility : uint8
@@ -652,9 +686,21 @@ enum class EFortCustomPartType : uint8
 	Body = 1,
 	Hat = 2,
 	Backpack = 3,
-	Charm = 4,
+	MiscOrTail = 4,
 	Face = 5,
-	NumTypes UMETA(Hidden)
+	Gameplay = 6,
+	NumTypes = 7,
+	EFortCustomPartType_MAX = 8
+};
+
+UENUM(BlueprintType)
+enum class EFortVariantTokenEquipRule : uint8
+{
+	EquipBaseVariantOnly = 0,
+	AlsoEquipAdditionalGrants = 1,
+	AlsoEquipPreviewGrantsIfOwned = 2,
+	EquipAllExceptUnowned = 3,
+	EFortVariantTokenEquipRule_MAX = 4
 };
 
 UENUM(BlueprintType)

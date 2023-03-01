@@ -19,7 +19,7 @@ public:
 		TSoftObjectPtr<UTexture2D>        BackgroundImage;
 
 	UPROPERTY(EditAnywhere)
-		FSoftObjectPath                   BackgroundMaterialOrTexture;
+		TSoftObjectPtr<UObject>                   BackgroundMaterialOrTexture;
 
 	UPROPERTY(EditAnywhere)
 		FSoftClassPath                    BackgroundWidget;

@@ -31,6 +31,7 @@ public:
 		FString CustomData;
 };
 
+
 USTRUCT(BlueprintType)
 struct FFortCosmeticVariantPreviewElement
 {
