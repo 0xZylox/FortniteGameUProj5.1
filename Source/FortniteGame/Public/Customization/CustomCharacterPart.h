@@ -234,9 +234,9 @@ class FORTNITEGAME_API UCustomCharacterPart : public UPrimaryDataAsset
 {
 	GENERATED_BODY()
 
-public:
+public: 
 	UPROPERTY(EditAnywhere, AssetRegistrySearchable)
-		TEnumAsByte<EFortCustomGender> GenderPermitted;
+		TEnumAsByte<EFortCustomGender> GenderPermitted = EFortCustomGender::Male;
 
 	UPROPERTY(EditAnywhere, AssetRegistrySearchable)
 		TEnumAsByte<EFortCustomBodyType> BodyTypesPermitted;

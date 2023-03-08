@@ -17,11 +17,76 @@ enum class EAthenaRewardItemType : uint8
 };
 
 UENUM(BlueprintType)
+enum class ELayeredAudioTriggerDirection : uint8
+{
+	AnyDirection                   = 0,
+	Forwards                       = 1,
+	Sideways                       = 2,
+	Backwards                      = 3,
+	Count                          = 4,
+	ELayeredAudioTriggerDirection_MAX = 5
+};
+
+UENUM(BlueprintType)
+enum class ELayeredAudioTriggerDir : uint8
+{
+	Forward                        = 0,
+	Backward                       = 1,
+	ELayeredAudioTriggerDir_MAX    = 2
+};
+
+
+
+UENUM(BlueprintType)
+enum class EFortAppliedSwapItemAndVariantState : uint8
+{
+	None                           = 0,
+	Active                         = 1,
+	Inactive                       = 2,
+	EFortAppliedSwapItemAndVariantState_MAX = 3
+};
+
+UENUM(BlueprintType)
 enum class EAthenaChallengeTabVisibility : uint8
 {
 	Hide = 0,
 	ShowAlways = 1
 };
+
+UENUM(BlueprintType)
+enum class ELayeredAudioInterpolationType : uint8
+{
+	None                           = 0,
+	CustomCurve                    = 1,
+	Linear                         = 2,
+	ELayeredAudioInterpolationType_MAX = 3
+};
+
+UENUM(BlueprintType)
+enum class EGliderTrailAttachmentMode : uint8
+{
+	GliderMesh                     = 0,
+	PlayerPawn                     = 1,
+	EGliderTrailAttachmentMode_MAX = 2
+};
+
+UENUM(BlueprintType)
+enum class EFortGliderType : uint8
+{
+	Glider                         = 0,
+	Umbrella                       = 1,
+	EFortGliderType_MAX            = 2
+};
+
+UENUM(BlueprintType)
+enum class EGliderTrailActivationMode : uint8
+{
+	None                           = 0,
+	AutoActivate                   = 1,
+	FullyDeployed                  = 2,
+	EGliderTrailActivationMode_MAX = 3
+};
+
 UENUM(BlueprintType)
 enum class ECharacterPartAttachmentTargetType : uint8
 {
@@ -29,6 +94,30 @@ enum class ECharacterPartAttachmentTargetType : uint8
 	SkeletalMeshForAssociatedPlayerPawnPartType = 1,
 	ECharacterPartAttachmentTargetType_MAX = 2
 };
+
+UENUM(BlueprintType)
+enum class EMontageSelectionPredicateType : uint8
+{
+	NotSet                         = 0,
+	MetaTags                       = 1,
+	CharacterParts                 = 2,
+	ActiveSwapPresence             = 3,
+	Invalid                        = 4,
+	EMontageSelectionPredicateType_MAX = 5
+};
+
+UENUM(BlueprintType)
+enum class ECustomHatType : uint8
+{
+	ECustomHatType_None            = 0,
+	ECustomHatType_Cap             = 1,
+	ECustomHatType_Helmet          = 2,
+	ECustomHatType_Mask            = 3,
+	ECustomHatType_Hat             = 4,
+	ECustomHatType_HeadReplacement = 5,
+	ECustomHatType_MAX             = 6
+};
+
 
 UENUM(BlueprintType)
 enum class EFortFeedbackContext : uint8

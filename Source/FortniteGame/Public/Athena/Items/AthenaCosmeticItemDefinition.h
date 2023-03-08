@@ -302,3 +302,18 @@ public:
 	UPROPERTY(EditAnywhere)
 	TArray<FText> ItemSearchTags;
 };
+
+UCLASS()
+class UFortHomebaseBannerIconItemDefinition : public UAthenaCosmeticItemDefinition
+{
+	GENERATED_BODY()
+
+public:
+
+	UPROPERTY(EditAnywhere)
+	FDataTableRowHandle category;                                                 
+
+	UPROPERTY(EditAnywhere)
+	bool bFullUsageRights = false;
+	
+};

@@ -55,6 +55,7 @@ public:
 		 FVector                                                        LargeFemaleRelativeScale;
 };
 
+
 USTRUCT(BlueprintType)
 struct FColorSwatchPair 
 {
@@ -241,4 +242,15 @@ public:
 
 	UPROPERTY(EditAnywhere)
 		TArray<FName>                               HatMorphTargets;
+};
+
+UCLASS(BlueprintType)
+class FORTNITEGAME_API UCustomCharacterHatData : public UCustomCharacterAccessoryData
+{
+	GENERATED_BODY(BlueprintType)
+public:
+
+
+	UPROPERTY(EditAnywhere)
+	TEnumAsByte<ECustomHatType> HatType;                                                  
 };

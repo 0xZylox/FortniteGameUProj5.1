@@ -7,17 +7,62 @@
 #include "FortniteGame/FortniteGame.h"
 #include "AthenaDanceItemDefinition.generated.h"
 
+
+USTRUCT()
+struct  FVariantSwapMontagePartRequirement
+{
+	GENERATED_BODY()
+
+public:
+
+	UPROPERTY(EditAnywhere)
+	TEnumAsByte<EFortCustomPartType> PartType;
+
+	UPROPERTY(EditAnywhere)
+	TSoftObjectPtr<UCustomCharacterPart> Part;
+	
+};
+
+USTRUCT()
+struct  FVariantSwapMontageActiveSwapsRequirement
+{
+	GENERATED_BODY()
+
+public:
+
+	UPROPERTY(EditAnywhere)
+	TArray<FMcpVariantChannelInfo> VariantSelections;                                        
+
+	UPROPERTY(EditAnywhere)
+	 UFortItemDefinition* Item;
+	
+};
+
 USTRUCT()
 struct  FVariantSwapMontageData
 {
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere)
-		FGameplayTag VariantMetaTagRequired;
 
 	UPROPERTY(EditAnywhere)
-		FName MontageSectionName;
+	FName MontageSectionName;
+	
+    UPROPERTY(EditAnywhere)
+	EMontageSelectionPredicateType EvaluationMode;
+
+	UPROPERTY(EditAnywhere)
+	FGameplayTag VariantMetaTagRequired;
+
+	UPROPERTY(EditAnywhere)
+	bool bRequireCharacterPart = true;
+
+	UPROPERTY(EditAnywhere)
+	TArray<FVariantSwapMontagePartRequirement>  PartRequirements;                                         // 0x0010(0x0010) (Edit, ZeroConstructor)
+
+	UPROPERTY(EditAnywhere)
+	TArray<FVariantSwapMontageActiveSwapsRequirement> SwapRequirements;
+	
 };
 
 UCLASS(BlueprintType)
