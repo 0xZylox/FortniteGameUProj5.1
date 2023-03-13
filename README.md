@@ -1,6 +1,6 @@
-# FortniteGame-Modding-5.1 (23.50)
+# FortniteGame-Modding-5.1 (24.0)
 
-> This is a Unreal Engine Project to mod 23.50 Fortnite
+> This is a Unreal Engine Project to mod 24.0 Fortnite
 > Note that this is a wip and many classes crash the game as of now
 ---
 
@@ -14,7 +14,7 @@
 
 ## Description
 
-This is a Unreal Project for modding the Game Fortnite (Version 23.40) which has Classes recreate from a SDK and uncooked/remade assets for making modding easier.
+This is a Unreal Project for modding the Game Fortnite (Version 24.0) which has Classes recreate from a SDK and uncooked/remade assets for making modding easier.
 
 
 ---
